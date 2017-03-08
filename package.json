@@ -1,0 +1,31 @@
+{
+  "name": "react-hello-world",
+  "version": "1.4.0",
+  "main": "html/index.html",
+  "description": "React Hello World",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Rafael Minguet García",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-react": "^6.23.0",
+    "fs": "0.0.1-security",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-shell": "^2.1.0",
+    "jquery": "^3.1.1",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1"
+  },
+  "dependencies": {
+    "grunt-cli": "^1.2.0",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.98.0"
+  }
+}
