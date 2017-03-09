@@ -20,6 +20,8 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-shell": "^2.1.0",
     "jquery": "^3.1.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "rollup": "^0.41.4",
     "rollup-plugin-babel": "^2.7.1"
   },
