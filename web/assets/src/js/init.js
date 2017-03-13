@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import helloFactory from './hello-component';
 (() => {
     document.addEventListener("DOMContentLoaded", function () {

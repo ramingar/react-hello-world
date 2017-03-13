@@ -1,6 +1,9 @@
 /**
  * Created by rafael on 09/03/17.
  */
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 const helloFactory = function ({React}) {
     const {string, func} = React.PropTypes;
 

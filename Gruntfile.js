@@ -3,12 +3,12 @@ module.exports = function (grunt) {
         watch: {
             scripts: {
                 files: ['web/assets/src/js/*.js'],
-                tasks: ['copy', 'shell:rollup']
+                tasks: ['copy', 'shell:rollupDev']
             }
         },
         shell: {
-            rollup: {
-                command: 'node rollup.js'
+            rollupDev: {
+                command: './node_modules/.bin/rollup -c rollup-dev.config.js'
             },
             removeBuild: {
                 command: 'rm -rf web/assets/build'
@@ -44,42 +44,6 @@ module.exports = function (grunt) {
                         filter: 'isFile'
                     }
                 ]
-            },
-            prod: {
-                files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: [
-                            'node_modules/react/dist/react.min.js',
-                            'node_modules/react-dom/dist/react-dom.min.js'
-                        ],
-                        dest: 'web/assets/build/js/',
-                        filter: 'isFile'
-                    }
-                ]
-            },
-            dev: {
-                files: [
-                    {
-                        expand: false,
-                        flatten: true,
-                        src: [
-                            'node_modules/react/dist/react.js'
-                        ],
-                        dest: 'web/assets/build/js/react.min.js',
-                        filter: 'isFile'
-                    },
-                    {
-                        expand: false,
-                        flatten: true,
-                        src: [
-                            'node_modules/react-dom/dist/react-dom.js'
-                        ],
-                        dest: 'web/assets/build/js/react-dom.min.js',
-                        filter: 'isFile'
-                    }
-                ]
             }
         }
     });
@@ -88,6 +52,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['shell:removeBuild', 'copy:main', 'copy:prod', 'shell:rollup']);
-    grunt.registerTask('dev', ['shell:removeBuild', 'copy:main', 'copy:dev', 'shell:rollup', 'watch']);
+    grunt.registerTask('default', ['shell:removeBuild', 'copy:main', 'shell:rollupDev']);
+    grunt.registerTask('dev', ['shell:removeBuild', 'copy:main', 'shell:rollupDev', 'watch']);
+    grunt.registerTask('tests', ['shell:tests']);
 };
