@@ -1,6 +1,6 @@
 {
   "name": "react-hello-world",
-  "version": "1.4.0",
+  "version": "1.0.0",
   "main": "html/index.html",
   "description": "React Hello World",
   "scripts": {
