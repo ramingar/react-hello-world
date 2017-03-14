@@ -8,10 +8,13 @@ module.exports = function (grunt) {
         },
         shell: {
             rollupDev: {
-                command: './node_modules/.bin/rollup -c rollup-dev.config.js'
+                command: 'export BABEL_ENV=dev && ./node_modules/.bin/rollup -c rollup-dev.config.js'
             },
             removeBuild: {
                 command: 'rm -rf web/assets/build'
+            },
+            tests: {
+                command: 'export BABEL_ENV=test && ./node_modules/.bin/babel-tape-runner tests/*.test.js | ./node_modules/.bin/faucet'
             }
         },
         copy: {

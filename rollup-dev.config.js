@@ -18,5 +18,6 @@ export default {
         commonjs(),
         babel(babelrc({addModuleOptions: false}))
     ],
-    dest: 'web/assets/build/js/index.js'
+    dest: 'web/assets/build/js/index.js',
+    sourceMap: true
 };

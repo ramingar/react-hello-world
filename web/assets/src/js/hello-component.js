@@ -48,7 +48,7 @@ const helloFactory = function ({React}) {
                 };
 
                 return (
-                    <p>Hello, &nbsp;
+                    <p>Hello,&nbsp;
                         <span
                             style={styles.displayMode}
                             onClick={() => {setMode('edit')}}>
