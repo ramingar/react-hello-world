@@ -3,12 +3,18 @@ module.exports = function (grunt) {
         watch: {
             scripts: {
                 files: ['web/assets/src/js/*.js'],
-                tasks: ['copy', 'shell:rollup']
+                tasks: ['copy', 'shell:rollupDev']
             }
         },
         shell: {
-            rollup: {
-                command: 'node rollup.js'
+            rollupDev: {
+                command: 'export BABEL_ENV=dev && ./node_modules/.bin/rollup -c rollup-dev.config.js'
+            },
+            removeBuild: {
+                command: 'rm -rf web/assets/build'
+            },
+            tests: {
+                command: 'export BABEL_ENV=test && ./node_modules/.bin/babel-tape-runner tests/*.test.js | ./node_modules/.bin/faucet'
             }
         },
         copy: {
@@ -49,6 +55,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['copy', 'shell:rollup']);
-    grunt.registerTask('dev', ['copy', 'shell:rollup', 'watch']);
+    grunt.registerTask('default', ['shell:removeBuild', 'copy:main', 'shell:rollupDev']);
+    grunt.registerTask('dev', ['shell:removeBuild', 'copy:main', 'shell:rollupDev', 'watch']);
+    grunt.registerTask('tests', ['shell:tests']);
 };

@@ -1,6 +1,6 @@
 {
   "name": "react-hello-world",
-  "version": "1.4.0",
+  "version": "1.0.0",
   "main": "html/index.html",
   "description": "React Hello World",
   "scripts": {
@@ -14,14 +14,25 @@
   "devDependencies": {
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-react": "^6.23.0",
+    "babel-tape-runner": "^2.0.1",
+    "babelrc-rollup": "^3.0.0",
+    "enzyme": "^2.7.1",
+    "faucet": "0.0.1",
     "fs": "0.0.1-security",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-shell": "^2.1.0",
     "jquery": "^3.1.1",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
     "rollup": "^0.41.4",
-    "rollup-plugin-babel": "^2.7.1"
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "tape": "^4.6.3"
   },
   "dependencies": {
     "grunt-cli": "^1.2.0",
